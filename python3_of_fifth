@@ -20,3 +20,18 @@ print(‘ ’.join(text.split()))#按空格分裂开，又用一个空格join起
 text = input('请输入一个字符串：')
 table = ''.maketrans('aeoiu', 'AEOIU')
 print(text.translate(table))
+
+#CalBMIv1.py
+height, weight = eval(input("请输入身高(米)和体重(公斤)[逗号隔开]: "))
+bmi= weight / pow(height, 2)
+print("BMI 数值为：{:.2f}".format(bmi))
+who = ""
+if bmi< 18.5:
+    who = "偏瘦"
+elif 18.5 <= bmi< 25:
+    who = "正常"
+elif 25 <= bmi< 30:
+    who = "偏胖"
+else:
+    who = "肥胖"
+print("BMI 指标为:国际'{0}'".format(who))
