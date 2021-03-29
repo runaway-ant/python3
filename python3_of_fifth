@@ -1,0 +1,22 @@
+1、编写程序，首先生成包含1000个随机数字字符的字符串，然后统计每个数字的出现次数。
+
+from string import digits
+from random import choice
+
+z = ''.join(choice(digits) for i in range(1000)) 
+
+result = {}
+for ch in z:
+    result[ch] = result.get(ch,0) + 1
+    
+for digit, fre in sorted(result.items()):
+    print(digit, fre, sep=':')
+
+2、编写程序，输入一个字符串，删除其中的重复空格，也就是如果有连续的多个空格的话就只保留一个，然后输出处理后的字符串。
+text = input('请输入一个包含空格的字符串：')
+print(‘ ’.join(text.split()))#按空格分裂开，又用一个空格join起来
+
+3、编写程序，输入一个字符串，把其中的元音字母i、o、a、e和u替换成对应的大写字母，然后输出新字符串。
+text = input('请输入一个字符串：')
+table = ''.maketrans('aeoiu', 'AEOIU')
+print(text.translate(table))
